@@ -1,0 +1,391 @@
+/* Reset */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a {
+  all: unset;
+}
+
+/* General space styling */
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url(/src/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+  src: url(/src/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+  src: url(/src/Playfair_Display/static/PlayfairDisplay-Bold.ttf);
+  src: url(/src/Playfair_Display/static/PlayfairDisplay-BoldItalic.ttf);
+  src: url(/src/Playfair_Display/static/PlayfairDisplay-Regular.ttf);
+}
+
+:root {
+  --pink: #fde5ec;
+  --peach: #fcbaad;
+  --darkPeach: #e48586;
+  --purple: #916db3;
+  --trasparentPink: #fde5ec;
+  --transparentPeach: #fcbaad;
+  --transparentDarkPeach: #e48586;
+
+  font-family: "PlayfairDisplay";
+  /* --fs-xl: clamp(3.5rem, 12vw + 1rem, 12rem);
+  --fs-600: 2rem;
+  --fs-400: 1rem; */
+  /* Step -2: 9.72px → 7.11px */
+  --step--2: clamp(0.44rem, calc(0.66rem + -0.28vw), 0.61rem);
+
+  /* Step -1: 11.67px → 10.67px */
+  --step--1: clamp(0.67rem, calc(0.75rem + -0.11vw), 0.73rem);
+
+  /* Step 0: 14.00px → 16.00px */
+  --step-0: clamp(0.88rem, calc(0.83rem + 0.22vw), 1rem);
+
+  /* Step 1: 16.80px → 24.00px */
+  --step-1: clamp(1.05rem, calc(0.89rem + 0.78vw), 1.5rem);
+
+  /* Step 2: 20.16px → 36.00px */
+  --step-2: clamp(1.26rem, calc(0.92rem + 1.72vw), 2.25rem);
+
+  /* Step 3: 24.19px → 54.00px */
+  --step-3: clamp(1.51rem, calc(0.86rem + 3.24vw), 3.38rem);
+
+  /* Step 4: 29.03px → 81.00px */
+  --step-4: clamp(1.81rem, calc(0.68rem + 5.65vw), 5.06rem);
+
+  /* Step 5: 34.84px → 121.50px */
+  --step-5: clamp(2.18rem, calc(0.29rem + 9.42vw), 7.59rem);
+}
+
+body {
+  height: 100vh;
+  background-color: var(--pink);
+  font-size: var(--step-0);
+}
+
+#content {
+  height: 100%;
+  display: grid;
+  align-content: space-between;
+  /* background-color: var(--lightBlue); */
+}
+
+img {
+  width: 100px;
+}
+
+#header {
+  font-size: var(--step-1);
+  color: var(--pink);
+  font-weight: bold;
+  background-color: var(--darkPeach);
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 1rem max(6vw, 2rem);
+}
+
+.nav-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: max(4vw, 2rem);
+}
+
+.nav {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  gap: max(4vw, 2rem);
+}
+
+.nav-item,
+.drop-down-item {
+  padding-bottom: 10px;
+  padding-left: 15px;
+  border-bottom: solid 2px var(--purple);
+  text-align: end;
+}
+
+.nav-item:hover,
+.nav-item:focus,
+.drop-down-item:hover,
+.drop-down-item:focus {
+  animation: 0.3s forwards change-color;
+}
+
+/* .nav-item:active,
+.nav-item:focus {
+  background-color: var(--purple);
+  padding-bottom: 3px;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-left: 5px;
+  border-radius: 5px;
+} */
+
+@keyframes change-color {
+  from {
+    background-color: var(--darkPeach);
+    padding-bottom: 10px;
+    padding-left: 15px;
+  }
+  to {
+    background-color: var(--purple);
+    color: var(--pink);
+    padding-bottom: 3px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-left: 5px;
+    border-radius: 5px;
+    text-align: start;
+  }
+}
+
+#drop-down-container {
+  display: none;
+}
+
+/* Switch dark mode btn styling */
+input[type="checkbox"] {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--pink);
+  outline: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--purple);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  font-family: fontAwesome;
+  content: "\f185";
+  color: var(--pink);
+  display: grid;
+  place-items: center;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateX(100%);
+  background: var(--pink);
+  font-family: fontAwesome;
+  content: "\f186";
+  color: var(--purple);
+}
+
+input[type="checkbox"]:checked {
+  background: var(--purple);
+}
+
+/* Mobile version styling */
+
+@media (max-width: 830px) {
+  /* Mobile drop-down */
+
+  .nav {
+    display: none;
+  }
+
+  #drop-down-container {
+    display: block;
+    position: relative;
+  }
+
+  .drop-down-btn {
+    background-color: var(--pink);
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+  }
+
+  .drop-down-btn::before {
+    font-family: fontAwesome;
+    content: "\f0c9";
+    color: var(--darkPeach);
+    font-size: var(--step-1);
+  }
+  .drop-down-btn:hover,
+  .drop-down-container.active > .drop-down-btn,
+  .nav-btn:hover {
+    background-color: var(--purple);
+  }
+
+  #drop-down-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.25rem);
+    background-color: var(--peach);
+    color: var(--darkPeach);
+    padding: 20px;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.238);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    display: grid;
+    gap: 15px;
+    z-index: 9999;
+  }
+
+  #drop-down-container.active > .drop-down-btn + #drop-down-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    z-index: 9999;
+  }
+
+  .drop-down-item {
+    color: var(--purple);
+  }
+}

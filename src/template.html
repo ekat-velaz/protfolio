@@ -4,7 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Portfolio</title>
   </head>
-  <body></body>
+  <body>
+    <div id="content">
+      <header id="header">
+        <div class="nav-container">
+          <input type="checkbox" id="toggle-btn" />
+          <nav class="nav">
+            <a href="" id="resume-link" class="nav-item">Resume</a>
+            <a href="" id="projects-link" class="nav-item">Projects</a>
+          </nav>
+        </div>
+        <img src="/src/images/small-logo.png" alt="logo" id="nav-logo" />
+        <nav class="nav">
+          <a href="" id="about-link" class="nav-item">Home</a>
+          <a href="" id="about-link" class="nav-item">About</a>
+          <a href="" id="about-link" class="nav-item">Contact</a>
+        </nav>
+        <div id="drop-down-container" data-dropdown>
+          <button class="drop-down-btn" data-dropdown-btn></button>
+          <div id="drop-down-menu">
+            <a href="" id="about-link" class="drop-down-item">Home</a>
+            <a href="" id="about-link" class="drop-down-item">About</a>
+            <a href="" id="projects-link" class="drop-down-item">Projects</a>
+            <a href="" id="resume-link" class="drop-down-item">Resume</a>
+            <a href="" id="about-link" class="drop-down-item">Contact</a>
+          </div>
+        </div>
+      </header>
+      <main id="main"></main>
+      <footer id="footer"></footer>
+    </div>
+  </body>
 </html>
