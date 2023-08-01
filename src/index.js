@@ -1,4 +1,8 @@
 import "./style.css";
+import smallLogo from "./images/small-logo.png";
+
+const smallLogoImg = document.getElementById("nav-logo");
+smallLogoImg.src = smallLogo;
 
 // make drop-down menu not to disappear when you click on it
 // (and also include toggle of active class if youll have many menu buttons)
