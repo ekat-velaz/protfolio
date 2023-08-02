@@ -1,8 +1,16 @@
 import "./style.css";
 import smallLogo from "./images/small-logo.png";
+import bigLogo from "./images/logo.png";
+import portriat from "./images/portriat.jpg";
 
 const smallLogoImg = document.getElementById("nav-logo");
 smallLogoImg.src = smallLogo;
+
+const bigLogoImg = document.getElementById("big-logo");
+bigLogoImg.src = bigLogo;
+
+const portriatImg = document.getElementById("portriat");
+portriatImg.src = portriat;
 
 // make drop-down menu not to disappear when you click on it
 // (and also include toggle of active class if youll have many menu buttons)
