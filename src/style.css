@@ -448,14 +448,61 @@ input[type="checkbox"]:checked {
   text-align: start;
 }
 
+#about-me-text {
+  width: 100%;
+  line-height: 2rem;
+  padding: 2rem 0;
+}
+
 .about-me-header {
   font-size: var(--step-3);
   font-weight: bold;
 }
+
+/* .about-me-header > li {
+  list-style: ;
+} */
+
 #portriat {
   border-radius: 20px;
   box-shadow: 10px -8px var(--purple);
   width: max(30vw, 300px);
+}
+
+/* Skills styling */
+
+.skills-container {
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  row-gap: 50px;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  /* grid-template-rows: repeat(auto-fit, minmax(60px, 1fr)); */
+}
+
+.skills-item {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  gap: 5px;
+}
+
+.skill-pic {
+  width: 50px;
+  filter: invert(58%) sepia(89%) saturate(403%) hue-rotate(309deg)
+    brightness(97%) contrast(84%);
+  transition: filter 0.5s ease-in-out;
+}
+
+.skill-pic:hover {
+  filter: invert(53%) sepia(18%) saturate(1081%) hue-rotate(228deg)
+    brightness(87%) contrast(90%);
+}
+
+.skill-name {
+  text-align: center;
 }
 
 /* Mobile version styling */
@@ -540,6 +587,10 @@ input[type="checkbox"]:checked {
     justify-items: center;
     text-align: justify;
     font-size: var(--step-2);
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
   /* #portriat {
