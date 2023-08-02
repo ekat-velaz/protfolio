@@ -12,35 +12,79 @@
       referrerpolicy="no-referrer"
     />
     <title>Portfolio</title>
-  <script defer src="main.c2cffd4152e7f5a2fc54.js"></script><script defer src="main.89b54a2fec8cfb4e679f.js"></script></head>
+  <script defer src="main.c2cffd4152e7f5a2fc54.js"></script><script defer src="main.06f2ee84b4a7fbecfdf6.js"></script></head>
   <body>
     <div id="content">
       <header id="header">
-        <div class="nav-container">
-          <input type="checkbox" id="toggle-btn" />
+        <div id="nav-container-main">
+          <div class="nav-container">
+            <input type="checkbox" id="toggle-btn" />
+            <nav class="nav">
+              <button class="nav-item"><a href="">Resume</a></button>
+              <button class="nav-item"><a href="">Projects</a></button>
+            </nav>
+          </div>
+          <img alt="logo" id="nav-logo" />
           <nav class="nav">
-            <a href="" id="resume-link" class="nav-item">Resume</a>
-            <a href="" id="projects-link" class="nav-item">Projects</a>
+            <button class="nav-item"><a href="#header">Home</a></button>
+            <button class="nav-item"><a href="#about-me">About</a></button>
+            <button class="nav-item"><a href="#">Contact</a></button>
           </nav>
-        </div>
-        <img alt="logo" id="nav-logo" />
-        <nav class="nav">
-          <a href="" id="about-link" class="nav-item">Home</a>
-          <a href="" id="about-link" class="nav-item">About</a>
-          <a href="" id="about-link" class="nav-item">Contact</a>
-        </nav>
-        <div id="drop-down-container" data-dropdown>
-          <button class="drop-down-btn" data-dropdown-btn></button>
-          <div id="drop-down-menu">
-            <a href="" id="about-link" class="drop-down-item">Home</a>
-            <a href="" id="about-link" class="drop-down-item">About</a>
-            <a href="" id="projects-link" class="drop-down-item">Projects</a>
-            <a href="" id="resume-link" class="drop-down-item">Resume</a>
-            <a href="" id="about-link" class="drop-down-item">Contact</a>
+          <div id="drop-down-container" data-dropdown>
+            <button class="drop-down-btn" data-dropdown-btn></button>
+            <div id="drop-down-menu">
+              <button class="drop-down-item">
+                <a href="#header" id="home-link">Home</a>
+              </button>
+              <button class="drop-down-item">
+                <a href="#about-me">About</a>
+              </button>
+              <button class="drop-down-item"><a href="#">Projects</a></button>
+              <button class="drop-down-item"><a href="#">Resume</a></button>
+              <button class="drop-down-item"><a href="#">Contact</a></button>
+            </div>
           </div>
         </div>
+        <hero id="hero">
+          <img src="/src/images/logo.png" alt="" id="big-logo" />
+          <h1 id="hero-text">
+            Hiya!
+            <br />
+            I am a front-end developer who loves to create elegant websites that
+            captivate and impress.
+          </h1>
+        </hero>
       </header>
-      <main id="main"></main>
+      <section id="about-me">
+        <img
+          src="/src/images/IMAGE 2023-08-01 20:42:24.jpg"
+          alt=""
+          id="portriat"
+        />
+        <div id="about-container">
+          <h2 class="about-me-header">About me</h2>
+          <nav id="about-me-nav">
+            <button class="about-nav-item" id="my-story">My story</button>
+            <button class="about-nav-item" id="education">Education</button>
+            <button class="about-nav-item" id="skills">Skills</button>
+          </nav>
+          <div id="about-me-text">
+            Hello there!
+            <br />
+            <br />I'm Ekaterina Velazquez, a passionate Frontend Developer based
+            in the UK. In early 2022, I discovered my love for coding, and since
+            then, I've been on an exciting journey, dedicatedly studying and
+            improving my skills to this day.
+            <br />
+            <br />As a self-taught enthusiast, I find immense joy in overcoming
+            coding challenges and creating visually captivating websites. I
+            firmly believe that persistence and dedication hold the key to
+            conquering any obstacle. I'm committed to delivering seamless user
+            experiences through simple and elegant code. Let's collaborate and
+            embark on exciting endeavors together!
+          </div>
+        </div>
+      </section>
       <footer id="footer"></footer>
     </div>
   </body>
