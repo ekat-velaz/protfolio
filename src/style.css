@@ -195,6 +195,7 @@ a {
 body {
   background-color: var(--pink);
   font-size: var(--step-0);
+  overflow-x: hidden;
 }
 
 #content {
@@ -250,10 +251,13 @@ body {
 .drop-down-item {
   padding-bottom: 10px;
   padding-left: 15px;
+  padding-top: 0;
+  padding-right: 0;
   border-bottom: solid 2px var(--purple);
   text-align: end;
-  transition: background-color 0.3s ease-in-out, padding-bottom 0.3s ease-in-out,
-    padding-left 0.3s ease-in-out, border-radius 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, padding-bottom 1s ease-in-out,
+    padding-left 1s ease-in-out, border-radius 1s ease-in-out,
+    padding-top 1s ease-in-out, padding-right 1s ease-in-out;
 }
 
 .nav-item:hover,
@@ -429,11 +433,14 @@ input[type="checkbox"]:checked {
   color: var(--darkPeach);
   padding-bottom: 10px;
   padding-left: 15px;
+  padding-top: 0;
+  padding-right: 0;
   border-bottom: solid 2px var(--purple);
   text-align: end;
 
-  transition: background-color 0.5s ease-in-out, padding-bottom 0.5s ease-in-out,
-    padding-left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out, padding-bottom 1s ease-in-out,
+    padding-left 1s ease-in-out, border-radius 1s ease-in-out,
+    padding-top 1s ease-in-out, padding-right 1s ease-in-out;
 }
 
 .about-nav-item:hover,
@@ -503,6 +510,125 @@ input[type="checkbox"]:checked {
 
 .skill-name {
   text-align: center;
+}
+
+/* Projects section */
+
+#projects {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  padding: 2rem max(2vw, 2rem);
+  color: var(--purple);
+}
+
+.projects-header {
+  font-size: var(--step-3);
+  font-weight: bold;
+}
+
+.class-header {
+  font-size: var(--step-3);
+  font-weight: bold;
+}
+
+.projects-carousel {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.carousel-ul {
+  --slider-index: 0;
+  padding: 10px 0;
+  width: max(60vw, 400px);
+  height: fit-content;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.carousel-ul::-webkit-scrollbar {
+  display: none;
+}
+
+.project-item > img {
+  inline-size: 90%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  padding: 5px;
+}
+
+.project-item {
+  width: 100%;
+  display: grid;
+  grid-template-rows: min-content;
+  gap: 10px;
+  padding: 15px 0;
+  justify-items: center;
+}
+
+.project-text-container {
+  display: grid;
+  grid-template-rows: min-content;
+  gap: 20px;
+  padding: 15px;
+  width: 90%;
+  justify-items: center;
+}
+
+.project-title {
+  color: var(--darkPeach);
+
+  font-size: var(--step-2);
+}
+
+.proj-btn-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+}
+
+.proj-btn {
+  background-color: inherit;
+  color: var(--darkPeach);
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-top: 0;
+  padding-right: 0;
+  border-bottom: solid 2px var(--purple);
+  text-align: end;
+
+  transition: background-color 0.5s ease-in-out, padding-bottom 1s ease-in-out,
+    padding-left 1s ease-in-out, border-radius 1s ease-in-out,
+    padding-top 1s ease-in-out, padding-right 1s ease-in-out;
+}
+
+.proj-btn:hover,
+.proj-btn:focus {
+  background-color: var(--purple);
+  color: var(--pink);
+  padding-bottom: 3px;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-left: 5px;
+  border-radius: 5px;
+  text-align: start;
+}
+
+#btn-left::before {
+  font-size: var(--step-3);
+  font-family: "fontAwesome";
+  content: "\f053";
+  padding-right: 5px;
+}
+
+#btn-right::before {
+  font-size: var(--step-3);
+  font-family: "fontAwesome";
+  content: "\f054";
+  padding-left: 5px;
 }
 
 /* Mobile version styling */

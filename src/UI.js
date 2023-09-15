@@ -13,6 +13,16 @@ import eslintIcon from "./images/eslint.svg";
 import prettierIcon from "./images/prettier.svg";
 import vscodeIcon from "./images/vscode.svg";
 import webpackIcon from "./images/webpack.svg";
+import weatherLIcon from "./images/projects/weather-light.png";
+import weatherDIcon from "./images/projects/weather-dark.png";
+import todoLIcon from "./images/projects/todo-light.png";
+import todoDIcon from "./images/projects/todo-dark.png";
+import restarauntLIcon from "./images/projects/restaraunt-light.png";
+import restarauntDIcon from "./images/projects/restraunt-dark.png";
+import tictactoeLIcon from "./images/projects/tictactoe-light.png";
+import tictactoeDIcon from "./images/projects/tictactoe-dark.png";
+import libraryLIcon from "./images/projects/library-light.png";
+import libraryDIcon from "./images/projects/library-dark.png";
 
 const UI = (() => {
   // Putting src attribute on every image
@@ -123,9 +133,142 @@ const UI = (() => {
     });
   }
 
+  function createProjects() {
+    const projectsSection = document.querySelector(".carousel-track");
+
+    projectsSection.innerHTML += `
+    <ul class='carousel-ul'>
+          <li class="project-item" id='1'>
+            <img src="${weatherLIcon}" alt="project mockup" />
+            <div class='project-text-container'>
+            <div class="project-title">Weather-App</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div class="proj-btn-container">
+              <button class="proj-btn"><a href="https://github.com/ekat-velaz/weather-app">Code</a></button>
+              <button class="proj-btn"><a href="https://ekat-velaz.github.io/weather-app/">Demo</a></button>
+            </div>
+            </div>
+          </li>
+          <li class="project-item" id='2'>
+            <img src="${todoLIcon}" alt="project mockup" />
+            <div class='project-text-container'>
+            <div class="project-title">To-Do List</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div class="proj-btn-container">
+              <button class="proj-btn"><a href="https://github.com/ekat-velaz/to-do-list">Code</a></button>
+              <button class="proj-btn"><a href="https://ekat-velaz.github.io/to-do-list/">Demo</a></button>
+            </div>
+            </div>
+          </li>
+          <li class="project-item" id='3'>
+            <img src="${restarauntLIcon}" alt="project mockup" />
+            <div class='project-text-container'>
+            <div class="project-title">Restaraunt page</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div class="proj-btn-container">
+              <button class="proj-btn"><a href="https://github.com/ekat-velaz/restauraunt_page">Code</a></button>
+              <button class="proj-btn"><a href="https://ekat-velaz.github.io/restauraunt_page/">Demo</a></button>
+            </div>
+            </div>
+          </li>
+          <li class="project-item" id='4'>
+            <img src="${tictactoeLIcon}" alt="project mockup" />
+            <div class='project-text-container'>
+            <div class="project-title">Tic-Tac-Toe</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div class="proj-btn-container">
+            <button class="proj-btn">
+            <a href="https://github.com/ekat-velaz/tic-tac-toe">Code</a>
+          </button>
+          <button class="proj-btn">
+            <a href="https://ekat-velaz.github.io/tic-tac-toe/">Demo</a>
+          </button>
+            </div>
+            </div>
+          </li>
+          <li class="project-item" id='5'>
+            <img src="${libraryLIcon}" alt="project mockup" />
+            <div class='project-text-container'>
+            <div class="project-title">My Library</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div class="proj-btn-container">
+              <button class="proj-btn">
+                <a href="https://github.com/ekat-velaz/library">Code</a>
+              </button>
+              <button class="proj-btn">
+                <a href="https://ekat-velaz.github.io/library/">Demo</a>
+              </button>
+            </div>
+            </div>
+          </li>
+     </ul>
+    `;
+  }
+
+  function scrollProj() {
+    let scrollContainer = document.querySelector(".carousel-ul");
+    let backBtn = document.getElementById("btn-left");
+    let nextBtn = document.getElementById("btn-right");
+    let projectItem = document.querySelector(".project-item");
+
+    scrollContainer.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      scrollContainer.style.scrollBehavior = "smooth";
+      scrollContainer.scrollLeft += e.deltaY;
+    });
+
+    nextBtn.addEventListener("click", () => {
+      let itemSize = projectItem.offsetWidth;
+      scrollContainer.style.scrollBehavior = "smooth";
+      scrollContainer.scrollLeft += itemSize;
+      if (scrollContainer.scrollLeft % itemSize !== 0) {
+        scrollContainer.scrollLeft =
+          Math.floor(scrollContainer.scrollLeft / itemSize) * itemSize +
+          itemSize;
+      }
+    });
+
+    backBtn.addEventListener("click", () => {
+      let itemSize = projectItem.offsetWidth;
+      scrollContainer.style.scrollBehavior = "smooth";
+      scrollContainer.scrollLeft -= itemSize;
+      if (scrollContainer.scrollLeft % itemSize !== 0) {
+        scrollContainer.scrollLeft =
+          Math.floor(scrollContainer.scrollLeft / itemSize) * itemSize;
+      }
+    });
+  }
+
   showPictures();
   dropDownUI();
   changeAboutMeContent();
+  createProjects();
+  scrollProj();
 })();
 
 export default UI;
