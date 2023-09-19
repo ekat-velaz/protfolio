@@ -264,11 +264,29 @@ const UI = (() => {
     });
   }
 
+  function createFooter() {
+    const footerContainer = document.getElementById("footer");
+
+    const copyright = document.createElement("div");
+    copyright.textContent = `Copyright © ${new Date().getFullYear()} ekat-velaz`;
+    copyright.setAttribute("id", "copyright");
+
+    const githubLink = document.createElement("a");
+    githubLink.setAttribute("id", "github-link");
+    githubLink.href = "https://github.com/ekat-velaz";
+
+    copyright.appendChild(githubLink);
+    footerContainer.appendChild(copyright);
+
+    return footerContainer;
+  }
+
   showPictures();
   dropDownUI();
   changeAboutMeContent();
   createProjects();
   scrollProj();
+  createFooter();
 })();
 
 export default UI;

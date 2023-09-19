@@ -15,48 +15,51 @@
   </head>
   <body>
     <div id="content">
-      <header id="header">
-        <div id="nav-container-main">
-          <div class="nav-container">
-            <input type="checkbox" id="toggle-btn" />
-            <nav class="nav">
-              <button class="nav-item"><a href="">Resume</a></button>
-              <button class="nav-item"><a href="#projects">Projects</a></button>
-            </nav>
-          </div>
-          <img alt="logo" id="nav-logo" />
+      <!-- <header id="header"> -->
+      <div id="nav-container-main">
+        <div class="nav-container">
+          <input type="checkbox" id="toggle-btn" />
           <nav class="nav">
-            <button class="nav-item"><a href="#header">Home</a></button>
-            <button class="nav-item"><a href="#about-me">About</a></button>
-            <button class="nav-item"><a href="#">Contact</a></button>
+            <button class="nav-item"><a href="">Resume</a></button>
+            <button class="nav-item"><a href="#projects">Projects</a></button>
           </nav>
-          <div id="drop-down-container" data-dropdown>
-            <button class="drop-down-btn" data-dropdown-btn></button>
-            <div id="drop-down-menu">
-              <button class="drop-down-item">
-                <a href="#header" id="home-link">Home</a>
-              </button>
-              <button class="drop-down-item">
-                <a href="#about-me">About</a>
-              </button>
-              <button class="drop-down-item">
-                <a href="#projects">Projects</a>
-              </button>
-              <button class="drop-down-item"><a href="#">Resume</a></button>
-              <button class="drop-down-item"><a href="#">Contact</a></button>
-            </div>
+        </div>
+        <img alt="logo" id="nav-logo" />
+        <nav class="nav">
+          <button class="nav-item"><a href="#header">Home</a></button>
+          <button class="nav-item"><a href="#about-me">About</a></button>
+          <button class="nav-item"><a href="#contacts">Contacts</a></button>
+        </nav>
+        <div id="drop-down-container" data-dropdown>
+          <button class="drop-down-btn" data-dropdown-btn></button>
+          <div id="drop-down-menu">
+            <button class="drop-down-item">
+              <a href="#header" id="home-link">Home</a>
+            </button>
+            <button class="drop-down-item">
+              <a href="#about-me">About</a>
+            </button>
+            <button class="drop-down-item">
+              <a href="#projects">Projects</a>
+            </button>
+            <button class="drop-down-item"><a href="#">Resume</a></button>
+            <button class="drop-down-item">
+              <a href="#contacts">Contacts</a>
+            </button>
           </div>
         </div>
-        <hero id="hero">
-          <img src="" alt="" id="big-logo" />
-          <h1 id="hero-text">
-            Hiya!
-            <br />
-            I am a front-end developer who loves to create elegant websites that
-            captivate and impress.
-          </h1>
-        </hero>
-      </header>
+      </div>
+
+      <hero id="hero">
+        <img src="" alt="" id="big-logo" />
+        <h1 id="hero-text">
+          Hiya!
+          <br />
+          I am a front-end developer who loves to create elegant websites that
+          captivate and impress.
+        </h1>
+      </hero>
+      <!-- </header> -->
       <section id="about-me">
         <img
           src="/src/images/IMAGE 2023-08-01 20:42:24.jpg"
@@ -64,7 +67,7 @@
           id="portriat"
         />
         <div id="about-container">
-          <h2 class="about-me-header">About me</h2>
+          <h2 class="section-header">About me</h2>
           <nav id="about-me-nav">
             <button class="about-nav-item" id="my-story">My story</button>
             <button class="about-nav-item" id="education">Education</button>
@@ -88,11 +91,25 @@
         </div>
       </section>
       <section id="projects">
-        <h3 class="projects-header">Projects</h3>
+        <h3 class="section-header">Projects</h3>
         <div class="projects-carousel">
           <button class="carousel-btn" id="btn-left"></button>
           <div class="carousel-track"></div>
           <button class="carousel-btn" id="btn-right"></button>
+        </div>
+      </section>
+      <section id="contacts">
+        <h4 class="section-header">Contacts</h4>
+        <div class="contacts-container">
+          <div class="contacts-hero">WANT TO GET IN TOUCH?</div>
+
+          <button class="cont-btn btn-email">
+            <a href="">ekatvelaz@gmail.com</a>
+          </button>
+          <button class="cont-btn btn-lin">
+            <a href="">Ekaterina Velazquez</a>
+          </button>
+          <button class="cont-btn btn-github"><a href="">ekat-velaz</a></button>
         </div>
       </section>
       <footer id="footer"></footer>
