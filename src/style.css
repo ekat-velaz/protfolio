@@ -165,6 +165,11 @@ a {
   --transparentPeach: #fcbaad;
   --transparentDarkPeach: #e48586;
 
+  --purpleFilter: invert(53%) sepia(18%) saturate(1081%) hue-rotate(228deg)
+    brightness(87%) contrast(90%);
+  --darkPeachFilter: invert(58%) sepia(89%) saturate(403%) hue-rotate(309deg)
+    brightness(97%) contrast(84%);
+
   font-family: "PlayfairDisplay";
 
   /* Step -2: 12.50px → 12.80px */
@@ -192,6 +197,21 @@ a {
   --step-5: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.82rem);
 }
 
+.dark-theme {
+  --pink: #916db3;
+  --peach: #e48586;
+  --darkPeach: #fcbaad;
+  --purple: #fde5ec;
+  --trasparentPink: #fde5ec;
+  --transparentPeach: #fcbaad;
+  --transparentDarkPeach: #e48586;
+
+  --purpleFilter: invert(58%) sepia(89%) saturate(403%) hue-rotate(309deg)
+    brightness(97%) contrast(84%);
+  --darkPeachFilter: invert(86%) sepia(12%) saturate(306%) hue-rotate(297deg)
+    brightness(106%) contrast(98%);
+}
+
 body {
   background-color: var(--pink);
   font-size: var(--step-0);
@@ -212,9 +232,15 @@ body {
   align-items: center;
 } */
 
+.section-header {
+  font-size: var(--step-3);
+  font-weight: bold;
+}
+
 /* Navigation styling */
 
 #nav-container-main {
+  z-index: 99999;
   font-size: var(--step-1);
   color: var(--pink);
   font-weight: bold;
@@ -307,19 +333,14 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   transform: translateX(100%);
-  background: var(--pink);
+  /* background: var(--pink); */
   font-family: fontAwesome;
   content: "\f186";
-  color: var(--purple);
+  /* color: var(--purple); */
 }
 
 input[type="checkbox"]:checked {
-  background: var(--purple);
-}
-
-.section-header {
-  font-size: var(--step-3);
-  font-weight: bold;
+  /* background: var(--purple); */
 }
 
 /* Drop down menu styling */
@@ -380,7 +401,9 @@ input[type="checkbox"]:checked {
 /* Hero styling */
 
 #hero {
-  height: 90vh;
+  scroll-margin-top: 96px;
+  height: 80vh;
+  margin-bottom: 50px;
   display: grid;
   grid-auto-flow: column;
   justify-content: center;
@@ -406,9 +429,40 @@ input[type="checkbox"]:checked {
   /* line-height: 4rem; */
 }
 
+/* Animations */
+
+.hidden-left {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+
+  transition: all 3s;
+  transition-delay: 0.5s;
+}
+
+.show-left {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.hidden-right {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(100%);
+  transition: all 3s;
+}
+
+.show-right {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
 /* About me section styling */
 
 #about-me {
+  scroll-margin-top: 96px;
   height: 100vh;
   display: grid;
   grid-auto-flow: column;
@@ -469,8 +523,13 @@ input[type="checkbox"]:checked {
 
 #portriat {
   border-radius: 20px;
-  box-shadow: 10px -8px var(--purple);
+  box-shadow: 20px -8px var(--purple);
   width: max(30vw, 300px);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+#portriat:hover {
+  box-shadow: 20px 8px var(--darkPeach);
 }
 
 /* Skills styling */
@@ -495,14 +554,16 @@ input[type="checkbox"]:checked {
 
 .skill-pic {
   width: 50px;
-  filter: invert(58%) sepia(89%) saturate(403%) hue-rotate(309deg)
-    brightness(97%) contrast(84%);
+  /* filter: invert(58%) sepia(89%) saturate(403%) hue-rotate(309deg)
+    brightness(97%) contrast(84%); */
+  filter: var(--darkPeachFilter);
   transition: filter 0.5s ease-in-out;
 }
 
 .skill-pic:hover {
-  filter: invert(53%) sepia(18%) saturate(1081%) hue-rotate(228deg)
-    brightness(87%) contrast(90%);
+  /* filter: invert(53%) sepia(18%) saturate(1081%) hue-rotate(228deg)
+    brightness(87%) contrast(90%); */
+  filter: var(--purpleFilter);
 }
 
 .skill-name {
@@ -512,6 +573,7 @@ input[type="checkbox"]:checked {
 /* Projects section */
 
 #projects {
+  scroll-margin-top: 96px;
   display: grid;
   place-content: center;
   place-items: center;
@@ -631,7 +693,8 @@ input[type="checkbox"]:checked {
 /* Contacts section styling */
 
 #contacts {
-  height: 80vh;
+  scroll-margin-top: 96px;
+  height: 70vh;
   display: grid;
   place-items: center;
   place-content: center;
@@ -648,6 +711,7 @@ input[type="checkbox"]:checked {
 }
 
 .contacts-hero {
+  color: var(--darkPeach);
   font-weight: bold;
   text-align: center;
 }
@@ -712,7 +776,7 @@ input[type="checkbox"]:checked {
 /* Footer styling */
 
 #footer {
-  height: 100px;
+  height: 80px;
   background-color: var(--purple);
   color: var(--pink);
   display: grid;
@@ -745,6 +809,7 @@ input[type="checkbox"]:checked {
   }
 
   #hero {
+    height: 100vh;
     display: grid;
     grid-auto-flow: row;
     justify-items: center;
@@ -764,6 +829,16 @@ input[type="checkbox"]:checked {
   #about-container {
     justify-items: center;
     text-align: justify;
+  }
+
+  /* Projects section */
+  #projects {
+    height: 100vh;
+  }
+
+  /* Contacts section */
+  #contacts {
+    height: 100vh;
   }
 }
 
@@ -795,6 +870,7 @@ input[type="checkbox"]:checked {
   }
 
   #hero {
+    height: 80vh;
     grid-auto-flow: row;
     justify-items: center;
   }
@@ -815,6 +891,36 @@ input[type="checkbox"]:checked {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
+  /* Projects section */
+  #projects {
+    height: 80vh;
+  }
+
+  .carousel-ul {
+    width: 80vw;
+  }
+
+  .project-item,
+  .project-text-container {
+    gap: 40px;
+    font-size: var(--step-2);
+  }
+
+  .project-title,
+  .proj-btn-container {
+    font-size: var(--step-3);
+  }
+
+  /* Contacts section */
+  #contacts {
+    height: 80vh;
+    font-size: var(--step-3);
+  }
+
+  .contacts-container {
+    width: 70vw;
+    gap: 100px;
+  }
   /* #portriat {
     width: max(50vw, 500px);
   } */
@@ -825,5 +931,41 @@ input[type="checkbox"]:checked {
   #header,
   #about-me {
     height: fit-content;
+  }
+}
+
+@media (max-height: 1000px) and (min-width: 600px) and (max-width: 1000px) {
+  #hero {
+    height: 100vh;
+  }
+
+  /* #projects {
+    height: 80vh;
+  } */
+
+  .carousel-ul {
+    width: 60vw;
+  }
+
+  .project-item,
+  .project-text-container {
+    gap: 10px;
+    font-size: var(--step-1);
+  }
+
+  .project-title,
+  .proj-btn-container {
+    font-size: var(--step-2);
+  }
+
+  /* Contacts section */
+  #contacts {
+    height: 70vh;
+    font-size: var(--step-2);
+  }
+
+  .contacts-container {
+    width: 70vw;
+    gap: 50px;
   }
 }

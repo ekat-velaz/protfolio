@@ -133,13 +133,21 @@ const UI = (() => {
     });
   }
 
-  function createProjects() {
+  function createProjects(
+    weatherPic,
+    todoPic,
+    restarauntPic,
+    tictactoePic,
+    libraryPic
+  ) {
     const projectsSection = document.querySelector(".carousel-track");
+
+    projectsSection.innerHTML = "";
 
     projectsSection.innerHTML += `
     <ul class='carousel-ul'>
           <li class="project-item" id='1'>
-            <img src="${weatherLIcon}" alt="project mockup" />
+            <img src="${weatherPic}" alt="project mockup" />
             <div class='project-text-container'>
             <div class="project-title">Weather-App</div>
             <div class="project-description">
@@ -155,7 +163,7 @@ const UI = (() => {
             </div>
           </li>
           <li class="project-item" id='2'>
-            <img src="${todoLIcon}" alt="project mockup" />
+            <img src="${todoPic}" alt="project mockup" />
             <div class='project-text-container'>
             <div class="project-title">To-Do List</div>
             <div class="project-description">
@@ -171,7 +179,7 @@ const UI = (() => {
             </div>
           </li>
           <li class="project-item" id='3'>
-            <img src="${restarauntLIcon}" alt="project mockup" />
+            <img src="${restarauntPic}" alt="project mockup" />
             <div class='project-text-container'>
             <div class="project-title">Restaraunt page</div>
             <div class="project-description">
@@ -187,7 +195,7 @@ const UI = (() => {
             </div>
           </li>
           <li class="project-item" id='4'>
-            <img src="${tictactoeLIcon}" alt="project mockup" />
+            <img src="${tictactoePic}" alt="project mockup" />
             <div class='project-text-container'>
             <div class="project-title">Tic-Tac-Toe</div>
             <div class="project-description">
@@ -207,7 +215,7 @@ const UI = (() => {
             </div>
           </li>
           <li class="project-item" id='5'>
-            <img src="${libraryLIcon}" alt="project mockup" />
+            <img src="${libraryPic}" alt="project mockup" />
             <div class='project-text-container'>
             <div class="project-title">My Library</div>
             <div class="project-description">
@@ -281,12 +289,75 @@ const UI = (() => {
     return footerContainer;
   }
 
+  function toggleMode() {
+    const toggleBtn = document.getElementById("toggle-btn");
+
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+      if (document.body.classList.contains("dark-theme")) {
+        createProjects(
+          weatherDIcon,
+          todoDIcon,
+          restarauntDIcon,
+          tictactoeDIcon,
+          libraryDIcon
+        );
+        scrollProj();
+      } else {
+        createProjects(
+          weatherLIcon,
+          todoLIcon,
+          restarauntLIcon,
+          tictactoeLIcon,
+          libraryLIcon
+        );
+        scrollProj();
+      }
+    });
+  }
+
+  function scrollAnimation() {
+    const observerLeft = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show-left");
+        } else {
+          entry.target.classList.remove("show-left");
+        }
+      });
+    });
+
+    const hiddenElementsLeft = document.querySelectorAll(".hidden-left");
+    hiddenElementsLeft.forEach((el) => observerLeft.observe(el));
+
+    const observerRight = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show-right");
+        } else {
+          entry.target.classList.remove("show-right");
+        }
+      });
+    });
+
+    const hiddenElementsRight = document.querySelectorAll(".hidden-right");
+    hiddenElementsRight.forEach((el) => observerRight.observe(el));
+  }
+
   showPictures();
   dropDownUI();
   changeAboutMeContent();
-  createProjects();
+  createProjects(
+    weatherLIcon,
+    todoLIcon,
+    restarauntLIcon,
+    tictactoeLIcon,
+    libraryLIcon
+  );
   scrollProj();
   createFooter();
+  toggleMode();
+  scrollAnimation();
 })();
 
 export default UI;
