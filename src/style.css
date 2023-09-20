@@ -435,9 +435,8 @@ input[type="checkbox"]:checked {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-
-  transition: all 3s;
-  transition-delay: 0.5s;
+  transition: 3s;
+  transition-property: transform, filter;
 }
 
 .show-left {
@@ -446,18 +445,19 @@ input[type="checkbox"]:checked {
   transform: translateX(0);
 }
 
-.hidden-right {
+/* .hidden-right {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(100%);
-  transition: all 3s;
+  transition: 3s;
+  transition-property: transform, filter;
 }
 
 .show-right {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
-}
+} */
 
 /* About me section styling */
 
