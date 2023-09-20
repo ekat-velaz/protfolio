@@ -68,12 +68,12 @@ const UI = (() => {
 
     myStoryBtn.addEventListener("click", () => {
       aboutMeContainer.innerHTML =
-        "Hello there!<br/><br/>I'm Ekaterina Velazquez, a passionate Frontend Developer basedin the UK. In early 2022, I discovered my love for coding, and since then, I've been on an exciting journey, dedicatedly studying and improving my skills to this day.<br/><br/>As a self-taught enthusiast, I find immense joy in overcoming coding challenges and creating visually captivating websites. I firmly believe that persistence and dedication hold the key toconquering any obstacle. I'm committed to delivering seamless user experiences through simple and elegant code. Let's collaborate and embark on exciting endeavors together!";
+        "Hello there!<br/><br/>I'm Ekaterina Velazquez, a passionate Frontend Developer based in the UK. I discovered my love for coding in the early 2022 and since then I've been on an exciting journey, dedicatedly studying and improving my skills to this day.<br/><br/>As a self-taught enthusiast, I find immense joy in overcoming coding challenges and creating visually captivating websites. I firmly believe that persistence and dedication hold the key to conquering any obstacle. I'm committed to delivering seamless user experiences through simple and elegant code. Let's work together on exciting projects!";
     });
 
     educationBtn.addEventListener("click", () => {
       aboutMeContainer.innerHTML =
-        '<li>"Full-Stack JavaScript" course at The Odin Project</li></br><li>Bachelors degree in Computer Science, Moscow University named after S. U. Witte (2022 - to this day, online studying)</li></br><li>Bachelors degree in Political Science, Moscow State University named after M. V. Lomonosov (2018-2022)</li>';
+        "<li>\"Full-Stack JavaScript\" course at The Odin Project</li></br><li>Bachelor's degree in Computer Science, Moscow University named after S. U. Witte (2022 - to this day, online studying)</li></br><li>Bachelor's degree in Political Science, Moscow State University named after M. V. Lomonosov (2018-2022)</li>";
     });
 
     skillsBtn.addEventListener("click", () => {
@@ -151,10 +151,7 @@ const UI = (() => {
             <div class='project-text-container'>
             <div class="project-title">Weather-App</div>
             <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            This Weather App, built with vanilla JavaScript, HTML, and CSS, using Weather API, provides real-time weather information with a clean and user-friendly interface, allowing users to effortlessly check current weather conditions and forecasts for any location worldwide.
             </div>
             <div class="proj-btn-container">
               <button class="proj-btn"><a href="https://github.com/ekat-velaz/weather-app">Code</a></button>
@@ -167,10 +164,7 @@ const UI = (() => {
             <div class='project-text-container'>
             <div class="project-title">To-Do List</div>
             <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            This To-Do App, created using vanilla JavaScript, HTML, and CSS, leverages local storage to help users organize their tasks efficiently. It offers a seamless and intuitive experience for adding, managing, and completing to-do items, ensuring tasks are always at your fingertips.
             </div>
             <div class="proj-btn-container">
               <button class="proj-btn"><a href="https://github.com/ekat-velaz/to-do-list">Code</a></button>
@@ -183,10 +177,7 @@ const UI = (() => {
             <div class='project-text-container'>
             <div class="project-title">Restaraunt page</div>
             <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            This restaurant website, built with basic JavaScript, HTML, and CSS, provides a user-friendly way for people to check out the restaurant's menu, contacts, and learn about the restaurant's atmosphere. It's designed to be simple and easy to use.
             </div>
             <div class="proj-btn-container">
               <button class="proj-btn"><a href="https://github.com/ekat-velaz/restauraunt_page">Code</a></button>
@@ -199,10 +190,7 @@ const UI = (() => {
             <div class='project-text-container'>
             <div class="project-title">Tic-Tac-Toe</div>
             <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            This Tic-Tac-Toe game, created using plain JavaScript, HTML, and CSS, offers a classic and entertaining gaming experience. Players can enjoy friendly competitions on a visually appealing and easy-to-use game board, playing against another player or against computer.
             </div>
             <div class="proj-btn-container">
             <button class="proj-btn">
@@ -219,10 +207,7 @@ const UI = (() => {
             <div class='project-text-container'>
             <div class="project-title">My Library</div>
             <div class="project-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+            This Library App, developed using simple JavaScript, HTML, and CSS, provides an organized way for users to manage their book collections. With its intuitive interface, users can easily add, delete, edit and mark their books read/unread.
             </div>
             <div class="proj-btn-container">
               <button class="proj-btn">
@@ -239,10 +224,10 @@ const UI = (() => {
   }
 
   function scrollProj() {
-    let scrollContainer = document.querySelector(".carousel-ul");
-    let backBtn = document.getElementById("btn-left");
-    let nextBtn = document.getElementById("btn-right");
-    let projectItem = document.querySelector(".project-item");
+    const scrollContainer = document.querySelector(".carousel-ul");
+    const backBtn = document.getElementById("btn-left");
+    const nextBtn = document.getElementById("btn-right");
+    const projectItem = document.querySelector(".project-item");
 
     scrollContainer.addEventListener("wheel", (e) => {
       e.preventDefault();
@@ -251,7 +236,7 @@ const UI = (() => {
     });
 
     nextBtn.addEventListener("click", () => {
-      let itemSize = projectItem.offsetWidth;
+      const itemSize = projectItem.offsetWidth;
       scrollContainer.style.scrollBehavior = "smooth";
       scrollContainer.scrollLeft += itemSize;
       if (scrollContainer.scrollLeft % itemSize !== 0) {
@@ -262,7 +247,7 @@ const UI = (() => {
     });
 
     backBtn.addEventListener("click", () => {
-      let itemSize = projectItem.offsetWidth;
+      const itemSize = projectItem.offsetWidth;
       scrollContainer.style.scrollBehavior = "smooth";
       scrollContainer.scrollLeft -= itemSize;
       if (scrollContainer.scrollLeft % itemSize !== 0) {
